@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.vaadin</groupId>
-        <artifactId>vaadin-grid-flow-parent</artifactId>
+        <artifactId>vaadin-renderer-flow-parent</artifactId>
         <version>21.0-SNAPSHOT</version>
     </parent>
-    <artifactId>vaadin-grid-flow</artifactId>
+    <artifactId>vaadin-renderer-flow</artifactId>
     <packaging>jar</packaging>
-    <name>Vaadin Grid</name>
+    <name>Flow Renderer</name>
     <dependencies>
         <dependency>
             <groupId>com.vaadin</groupId>
@@ -17,56 +17,13 @@
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
-            <artifactId>flow-html-components</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-dnd</artifactId>
-            <version>${flow.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-context-menu-flow</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
+            <artifactId>flow-test-generic</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-test-generic</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-renderer-flow</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-text-field-flow</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-data</artifactId>
-            <version>${flow.version}</version>
-            <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -91,24 +48,6 @@
                         </manifestFile>
                     </archive>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.karaf.tooling</groupId>
-                <artifactId>karaf-maven-plugin</artifactId>
-                <configuration>
-                    <enableGeneration>true</enableGeneration>
-                    <includeProjectArtifact>true</includeProjectArtifact>
-                </configuration>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <id>generate-features-file</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>features-generate-descriptor</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
