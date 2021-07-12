@@ -8,7 +8,15 @@ window.Vaadin.Flow.ironListConnector = {
       return;
     }
 
-    const extraItemsBuffer = 20;
+    let extraItemsBuffer = 20;
+
+    if(list.hasAttribute('items-buffer')){
+      extraItemsBuffer = parseInt(list.getAttribute('items-buffer'));
+      if (extraItemsBuffer < 0) {
+        console.warn("Items buffer cannot be negative. 0 is used as default value.");
+        extraItemsBuffer = 0;
+      }
+    }
 
     let lastRequestedRange = [0, 0];
 
