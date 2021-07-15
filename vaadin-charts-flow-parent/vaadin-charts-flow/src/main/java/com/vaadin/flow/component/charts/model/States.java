@@ -17,6 +17,7 @@ public class States extends AbstractConfigurationObject {
 
     private Hover hover;
     private Select select;
+    private Inactive inactive;
 
     public States() {
     }
@@ -31,6 +32,11 @@ public class States extends AbstractConfigurationObject {
         return hover;
     }
 
+    /**
+     * The appearance of the other marker when hover.
+     *
+     * @see #setInactive(Hover)
+     */
     public void setHover(Hover hover) {
         this.hover = hover;
     }
@@ -52,5 +58,24 @@ public class States extends AbstractConfigurationObject {
      */
     public void setSelect(Select select) {
         this.select = select;
+    }
+
+    /**
+     * @see #setInactive(Hover)
+     */
+    public Inactive getInactive() {
+        if (inactive == null) {
+            inactive = new Inactive();
+        }
+        return inactive;
+    }
+
+    /**
+     * The appearance of the other point markers when one is hovered.
+     *
+     * @see #setHover(Hover)
+     */
+    public void setInactive(Inactive inactive) {
+        this.inactive = inactive;
     }
 }
